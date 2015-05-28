@@ -1,0 +1,8 @@
+{
+  "name": "s3-mixin",
+  "version": "0.1.0",
+  "description": "A javascript mixin object for client to server direct upload to S3.",
+  "main": "index.js",
+  "author": "cj3kim",
+  "license": "MIT"
+}
