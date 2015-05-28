@@ -23,7 +23,7 @@ var S3Mixin = {
     return Promise.resolve(
       $.ajax({
         type: 'GET',
-        url: '/api/sign_s3',
+        url: '/api/sign_s3', //REPLACE with your api end point
         data: {file_name: filePath + file.name, file_type: file.type},
       });
     );
@@ -35,7 +35,9 @@ var S3Mixin = {
     return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest();
       xhr.open("PUT", signedRequest);
-      //HEADERS have to reflect the ones on the server.
+      //IMPORTANT
+      //The xhr HEADERS must be the same as the headers used to generate the signed request.
+
       xhr.setRequestHeader('x-amz-acl', 'public-read');
       xhr.setRequestHeader('Content-Type', file.type);
       xhr.setRequestHeader('Expires', 600);
